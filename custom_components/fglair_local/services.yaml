@@ -1,0 +1,17 @@
+set_property:
+  fields:
+    device_id:
+      required: true
+      selector:
+        device:
+          integration: fglair_local
+    name:
+      required: true
+      example: wifi_led_enable
+      selector:
+        text:
+    value:
+      required: true
+      example: 1
+      selector:
+        text:
