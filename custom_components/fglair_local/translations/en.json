@@ -1,0 +1,278 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add an air conditioner",
+        "description": "You need the IP address of the unit and its LAN key.",
+        "menu_options": {
+          "manual": "Enter IP address and LAN key",
+          "cloud": "Fetch the LAN key from my FGLair account"
+        }
+      },
+      "manual": {
+        "title": "Connection",
+        "description": "The unit calls back to Home Assistant, so the callback port must be reachable from the unit.",
+        "data": {
+          "host": "IP address of the air conditioner",
+          "lanip_key": "LAN key",
+          "callback_port": "Callback port",
+          "callback_ip": "Callback IP address (optional)"
+        },
+        "data_description": {
+          "callback_ip": "Only needed when Home Assistant picks the wrong network interface."
+        }
+      },
+      "cloud": {
+        "title": "FGLair account",
+        "description": "Used once to fetch the LAN key. Your password is not stored.",
+        "data": {
+          "region": "Region",
+          "email": "Email",
+          "password": "Password"
+        }
+      },
+      "cloud_device": {
+        "title": "Choose an air conditioner",
+        "data": {
+          "device": "Air conditioner"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "The air conditioner does not answer on this IP address.",
+      "no_callback": "The air conditioner did not call back. Check the callback port, the firewall and the network mode of Home Assistant.",
+      "invalid_key": "The air conditioner called back but cannot read our commands. Check the LAN key.",
+      "port_in_use": "The callback port is already in use.",
+      "invalid_auth": "Wrong email address or password.",
+      "cloud_error": "The FGLair cloud could not be reached.",
+      "no_devices": "No new air conditioners found in this account."
+    },
+    "abort": {
+      "already_configured": "This air conditioner is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "FGLair Local",
+        "menu_options": {
+          "settings": "Show or change settings",
+          "cloud": "Fetch the LAN key from my FGLair account"
+        }
+      },
+      "settings": {
+        "title": "Settings",
+        "description": "Saving reconnects to the unit.",
+        "data": {
+          "host": "IP address of the air conditioner",
+          "lanip_key": "LAN key",
+          "callback_port": "Callback port",
+          "callback_ip": "Callback IP address (optional)",
+          "scan_interval": "Update interval"
+        },
+        "data_description": {
+          "callback_ip": "Only needed when Home Assistant picks the wrong network interface."
+        }
+      },
+      "cloud": {
+        "title": "FGLair account",
+        "description": "Used once to fetch the LAN key. Your password is not stored.",
+        "data": {
+          "region": "Region",
+          "email": "Email",
+          "password": "Password"
+        }
+      },
+      "cloud_device": {
+        "title": "Choose an air conditioner",
+        "data": {
+          "device": "Air conditioner"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "The air conditioner does not answer on this IP address.",
+      "no_callback": "The air conditioner did not call back. Check the callback port, the firewall and the network mode of Home Assistant.",
+      "invalid_key": "The air conditioner called back but cannot read our commands. Check the LAN key.",
+      "port_in_use": "The callback port is already in use.",
+      "invalid_auth": "Wrong email address or password.",
+      "cloud_error": "The FGLair cloud could not be reached.",
+      "no_devices": "No new air conditioners found in this account."
+    }
+  },
+  "selector": {
+    "region": {
+      "options": {
+        "eu": "Europe",
+        "us": "United States and other",
+        "cn": "China"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "display_temperature": {
+        "name": "Indoor temperature"
+      },
+      "outdoor_temperature": {
+        "name": "Outdoor temperature"
+      },
+      "error_code": {
+        "name": "Error code"
+      },
+      "mcu_error": {
+        "name": "MCU error"
+      },
+      "op_status": {
+        "name": "Operating status"
+      },
+      "mcu_fw_version": {
+        "name": "Firmware version"
+      },
+      "af_horizontal_num_dir": {
+        "name": "Horizontal vane positions"
+      },
+      "af_vertical_num_dir": {
+        "name": "Vertical vane positions"
+      },
+      "auto_on_off_set_time": {
+        "name": "Timer on/off set time"
+      },
+      "auto_save_set_time": {
+        "name": "Energy save set time"
+      },
+      "building_name": {
+        "name": "Building name"
+      },
+      "comm_version": {
+        "name": "Communication version"
+      },
+      "demand_control": {
+        "name": "Demand control"
+      },
+      "device_capabilities": {
+        "name": "Capabilities"
+      },
+      "device_name": {
+        "name": "Device name"
+      },
+      "human_det": {
+        "name": "Human detection"
+      },
+      "model_name": {
+        "name": "Model name"
+      },
+      "reboot_range": {
+        "name": "Reboot range"
+      },
+      "reboot_start": {
+        "name": "Reboot start"
+      },
+      "service_function_address": {
+        "name": "Service address"
+      },
+      "system_type": {
+        "name": "System type"
+      }
+    },
+    "binary_sensor": {
+      "child_lock_mode": {
+        "name": "Child lock"
+      },
+      "test_run": {
+        "name": "Test run"
+      },
+      "wifi_led_enable": {
+        "name": "Wi-Fi LED"
+      }
+    },
+    "switch": {
+      "economy_mode": {
+        "name": "Economy mode"
+      },
+      "powerful_mode": {
+        "name": "Powerful mode"
+      },
+      "min_heat": {
+        "name": "Minimum heat"
+      },
+      "outdoor_low_noise": {
+        "name": "Outdoor low noise"
+      },
+      "coil_dry_mode": {
+        "name": "Coil dry"
+      },
+      "af_vertical_swing": {
+        "name": "Vertical swing"
+      },
+      "af_horizontal_swing": {
+        "name": "Horizontal swing"
+      },
+      "indoor_fan_control": {
+        "name": "Indoor fan control"
+      },
+      "human_det_auto_off": {
+        "name": "Auto off on absence"
+      },
+      "human_det_auto_on_off": {
+        "name": "Auto on/off on presence"
+      },
+      "human_det_auto_save": {
+        "name": "Save energy on absence"
+      },
+      "master_timer_on_off_1": {
+        "name": "Master timer 1"
+      },
+      "master_timer_on_off_2": {
+        "name": "Master timer 2"
+      }
+    },
+    "select": {
+      "af_vertical_direction": {
+        "name": "Vertical vane"
+      },
+      "af_horizontal_direction": {
+        "name": "Horizontal vane"
+      }
+    },
+    "number": {
+      "auto_off_time": {
+        "name": "Auto off time"
+      },
+      "auto_on_off_time": {
+        "name": "Auto on/off time"
+      },
+      "auto_save_time": {
+        "name": "Energy save time"
+      },
+      "rc_prohibition": {
+        "name": "Remote control prohibition"
+      }
+    },
+    "button": {
+      "filter_sign_reset_display": {
+        "name": "Reset filter sign"
+      }
+    }
+  },
+  "services": {
+    "set_property": {
+      "name": "Set property",
+      "description": "Writes any property of the unit. For advanced use: wrong values can change how the unit behaves.",
+      "fields": {
+        "device_id": {
+          "name": "Air conditioner",
+          "description": "The unit to write to."
+        },
+        "name": {
+          "name": "Property",
+          "description": "Name of the property."
+        },
+        "value": {
+          "name": "Value",
+          "description": "New value."
+        }
+      }
+    }
+  }
+}

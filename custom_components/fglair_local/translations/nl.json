@@ -1,0 +1,278 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Airco toevoegen",
+        "description": "Je hebt het IP-adres van de unit en de LAN-sleutel nodig.",
+        "menu_options": {
+          "manual": "IP-adres en LAN-sleutel invoeren",
+          "cloud": "LAN-sleutel ophalen uit mijn FGLair-account"
+        }
+      },
+      "manual": {
+        "title": "Verbinding",
+        "description": "De unit belt terug naar Home Assistant, dus de terugbelpoort moet bereikbaar zijn vanaf de unit.",
+        "data": {
+          "host": "IP-adres van de airco",
+          "lanip_key": "LAN-sleutel",
+          "callback_port": "Terugbelpoort",
+          "callback_ip": "Terugbel-IP-adres (optioneel)"
+        },
+        "data_description": {
+          "callback_ip": "Alleen nodig als Home Assistant de verkeerde netwerkinterface kiest."
+        }
+      },
+      "cloud": {
+        "title": "FGLair-account",
+        "description": "Wordt eenmalig gebruikt om de LAN-sleutel op te halen. Je wachtwoord wordt niet opgeslagen.",
+        "data": {
+          "region": "Regio",
+          "email": "E-mail",
+          "password": "Wachtwoord"
+        }
+      },
+      "cloud_device": {
+        "title": "Kies een airco",
+        "data": {
+          "device": "Airco"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "De airco antwoordt niet op dit IP-adres.",
+      "no_callback": "De airco heeft niet teruggebeld. Controleer de terugbelpoort, de firewall en de netwerkmodus van Home Assistant.",
+      "invalid_key": "De airco belde terug, maar kan onze opdrachten niet lezen. Controleer de LAN-sleutel.",
+      "port_in_use": "De terugbelpoort is al in gebruik.",
+      "invalid_auth": "Verkeerd e-mailadres of wachtwoord.",
+      "cloud_error": "De FGLair-cloud is niet bereikbaar.",
+      "no_devices": "Geen nieuwe airco's gevonden in dit account."
+    },
+    "abort": {
+      "already_configured": "Deze airco is al ingesteld."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "FGLair Local",
+        "menu_options": {
+          "settings": "Instellingen bekijken of wijzigen",
+          "cloud": "LAN-sleutel ophalen uit mijn FGLair-account"
+        }
+      },
+      "settings": {
+        "title": "Instellingen",
+        "description": "Na opslaan maakt de integratie opnieuw verbinding met de unit.",
+        "data": {
+          "host": "IP-adres van de airco",
+          "lanip_key": "LAN-sleutel",
+          "callback_port": "Terugbelpoort",
+          "callback_ip": "Terugbel-IP-adres (optioneel)",
+          "scan_interval": "Update-interval"
+        },
+        "data_description": {
+          "callback_ip": "Alleen nodig als Home Assistant de verkeerde netwerkinterface kiest."
+        }
+      },
+      "cloud": {
+        "title": "FGLair-account",
+        "description": "Wordt eenmalig gebruikt om de LAN-sleutel op te halen. Je wachtwoord wordt niet opgeslagen.",
+        "data": {
+          "region": "Regio",
+          "email": "E-mail",
+          "password": "Wachtwoord"
+        }
+      },
+      "cloud_device": {
+        "title": "Kies een airco",
+        "data": {
+          "device": "Airco"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "De airco antwoordt niet op dit IP-adres.",
+      "no_callback": "De airco heeft niet teruggebeld. Controleer de terugbelpoort, de firewall en de netwerkmodus van Home Assistant.",
+      "invalid_key": "De airco belde terug, maar kan onze opdrachten niet lezen. Controleer de LAN-sleutel.",
+      "port_in_use": "De terugbelpoort is al in gebruik.",
+      "invalid_auth": "Verkeerd e-mailadres of wachtwoord.",
+      "cloud_error": "De FGLair-cloud is niet bereikbaar.",
+      "no_devices": "Geen nieuwe airco's gevonden in dit account."
+    }
+  },
+  "selector": {
+    "region": {
+      "options": {
+        "eu": "Europa",
+        "us": "Verenigde Staten en overig",
+        "cn": "China"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "display_temperature": {
+        "name": "Binnentemperatuur"
+      },
+      "outdoor_temperature": {
+        "name": "Buitentemperatuur"
+      },
+      "error_code": {
+        "name": "Foutcode"
+      },
+      "mcu_error": {
+        "name": "MCU-fout"
+      },
+      "op_status": {
+        "name": "Bedrijfsstatus"
+      },
+      "mcu_fw_version": {
+        "name": "Firmwareversie"
+      },
+      "af_horizontal_num_dir": {
+        "name": "Horizontale lamelstanden"
+      },
+      "af_vertical_num_dir": {
+        "name": "Verticale lamelstanden"
+      },
+      "auto_on_off_set_time": {
+        "name": "Ingestelde tijd timer aan/uit"
+      },
+      "auto_save_set_time": {
+        "name": "Ingestelde tijd energiebesparing"
+      },
+      "building_name": {
+        "name": "Gebouwnaam"
+      },
+      "comm_version": {
+        "name": "Communicatieversie"
+      },
+      "demand_control": {
+        "name": "Vermogensbegrenzing"
+      },
+      "device_capabilities": {
+        "name": "Mogelijkheden"
+      },
+      "device_name": {
+        "name": "Apparaatnaam"
+      },
+      "human_det": {
+        "name": "Aanwezigheidsdetectie"
+      },
+      "model_name": {
+        "name": "Modelnaam"
+      },
+      "reboot_range": {
+        "name": "Herstartinstelling"
+      },
+      "reboot_start": {
+        "name": "Herstart module"
+      },
+      "service_function_address": {
+        "name": "Service-adres"
+      },
+      "system_type": {
+        "name": "Systeemtype"
+      }
+    },
+    "binary_sensor": {
+      "child_lock_mode": {
+        "name": "Kinderslot"
+      },
+      "test_run": {
+        "name": "Proefdraaien"
+      },
+      "wifi_led_enable": {
+        "name": "Wifi-led"
+      }
+    },
+    "switch": {
+      "economy_mode": {
+        "name": "Eco-stand"
+      },
+      "powerful_mode": {
+        "name": "Powerful-stand"
+      },
+      "min_heat": {
+        "name": "Vorstbeveiliging"
+      },
+      "outdoor_low_noise": {
+        "name": "Stille buitenunit"
+      },
+      "coil_dry_mode": {
+        "name": "Warmtewisselaar drogen"
+      },
+      "af_vertical_swing": {
+        "name": "Verticale swing"
+      },
+      "af_horizontal_swing": {
+        "name": "Horizontale swing"
+      },
+      "indoor_fan_control": {
+        "name": "Regeling binnenventilator"
+      },
+      "human_det_auto_off": {
+        "name": "Automatisch uit bij afwezigheid"
+      },
+      "human_det_auto_on_off": {
+        "name": "Automatisch aan/uit bij aanwezigheid"
+      },
+      "human_det_auto_save": {
+        "name": "Besparen bij afwezigheid"
+      },
+      "master_timer_on_off_1": {
+        "name": "Hoofdtimer 1"
+      },
+      "master_timer_on_off_2": {
+        "name": "Hoofdtimer 2"
+      }
+    },
+    "select": {
+      "af_vertical_direction": {
+        "name": "Verticale lamel"
+      },
+      "af_horizontal_direction": {
+        "name": "Horizontale lamel"
+      }
+    },
+    "number": {
+      "auto_off_time": {
+        "name": "Timer uit"
+      },
+      "auto_on_off_time": {
+        "name": "Timer aan/uit"
+      },
+      "auto_save_time": {
+        "name": "Timer energiebesparing"
+      },
+      "rc_prohibition": {
+        "name": "Afstandsbediening blokkeren"
+      }
+    },
+    "button": {
+      "filter_sign_reset_display": {
+        "name": "Filtermelding resetten"
+      }
+    }
+  },
+  "services": {
+    "set_property": {
+      "name": "Property instellen",
+      "description": "Schrijft elke property van de unit. Voor gevorderd gebruik: verkeerde waarden kunnen het gedrag van de unit veranderen.",
+      "fields": {
+        "device_id": {
+          "name": "Airco",
+          "description": "De unit om naar te schrijven."
+        },
+        "name": {
+          "name": "Property",
+          "description": "Naam van de property."
+        },
+        "value": {
+          "name": "Waarde",
+          "description": "Nieuwe waarde."
+        }
+      }
+    }
+  }
+}
